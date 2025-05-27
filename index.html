@@ -4,6 +4,37 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>weathernaw</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
   </head>
-  <body></body>
+  <body>
+    <header>
+      <form>
+        <input type="search" placeholder="search for a city..." />
+        <input type="button" value="search" />
+      </form>
+    </header>
+    <main>
+      <div class="city">
+        <p>
+          <span class="material-symbols-outlined">location_on</span>East London
+        </p>
+        <p id="time">Today, 00:32 PM</p>
+      </div>
+      <div class="temperature">
+        <p>
+          <span id="current-temperature">12</span><br /><span id="description"
+            >cloudy</span
+          >
+        </p>
+      </div>
+      <ul>
+        <li>Humidity</li>
+        <li>Rain</li>
+        <li>wind</li>
+      </ul>
+    </main>
+  </body>
 </html>

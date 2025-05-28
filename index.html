@@ -19,30 +19,47 @@
   <body>
     <div class="weather-interface">
       <header>
-        <form>
-          <input type="search" placeholder="search for a city..." />
-          <input type="button" value="search" />
+        <form class="search-form">
+          <div class="search-container">
+            <input
+              type="search"
+              placeholder=""
+              autocomplete="none"
+              class="search-form-input"
+            />
+
+            <button type="button" class="search-form-button">
+              <span class="material-symbols-outlined">search</span>
+            </button>
+          </div>
         </form>
       </header>
       <main>
         <div class="city">
-          <p>
-            <span class="material-symbols-outlined">location_on</span>East
-            London
+          <p class="city-name">
+            <span class="material-symbols-outlined city-icon">location_on</span
+            >East London
           </p>
           <p id="time">Today, 00:32 PM</p>
         </div>
         <div class="temperature">
           <p>
-            <span id="current-temperature">12</span><br /><span id="description"
-              >cloudy</span
+            <span id="current-temperature" class="current-temperature">12</span
+            ><span id="temperature-unit">°</span><br /><span id="description"
+              >Mostly Cloudy</span
             >
           </p>
         </div>
-        <ul>
-          <li>Humidity</li>
-          <li>Rain</li>
-          <li>wind</li>
+        <ul class="weather-conditions">
+          <li>
+            <span class="material-symbols-outlined city-icon">rainy</span>
+          </li>
+          <li>
+            <span class="material-symbols-outlined city-icon">water_drop</span>
+          </li>
+          <li>
+            <span class="material-symbols-outlined city-icon">air</span>
+          </li>
         </ul>
       </main>
     </div>

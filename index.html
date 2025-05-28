@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="src/style.css" rel="stylesheet" />
-    <title>weathernaw</title>
+    <title>Imoyezulu</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
       rel="stylesheet"
@@ -19,16 +19,17 @@
   <body>
     <div class="weather-interface">
       <header>
-        <form class="search-form">
+        <form class="search-form" id="search-form">
           <div class="search-container">
             <input
               type="search"
-              placeholder=""
-              autocomplete="none"
+              placeholder="search"
+              required
               class="search-form-input"
+              id="search-form-input"
             />
 
-            <button type="button" class="search-form-button">
+            <button type="submit" class="search-form-button">
               <span class="material-symbols-outlined">search</span>
             </button>
           </div>
@@ -38,7 +39,7 @@
         <div class="city">
           <p class="city-name">
             <span class="material-symbols-outlined city-icon">location_on</span
-            >East London
+            ><span id="city">East London</span>
           </p>
           <p id="time">Today, 00:32 PM</p>
         </div>
@@ -63,5 +64,6 @@
         </ul>
       </main>
     </div>
+    <script src="src/index.js"></script>
   </body>
 </html>

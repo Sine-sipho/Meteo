@@ -27,7 +27,7 @@ body {
   opacity: 0.6;
   border: none;
   opacity: 0.4;
-  padding: 15px 5px;
+  padding: 15px 10px;
   font-size: 14px;
   box-sizing: border-box;
   letter-spacing: 0.08em;
@@ -57,10 +57,14 @@ body {
   align-items: center;
   color: #276299;
   padding: 10px 0;
+  position: relative;
 }
 .city-name {
   font-weight: 600;
-  align-items: center;
+}
+.city-icon {
+  position: relative;
+  top: 5px;
 }
 .temperature {
   color: #276299;

@@ -7,7 +7,7 @@ function refreshWeather(response) {
   weatherDescription.innerHTML = response.data.condition.description;
   let humidityElement = document.querySelector("#humidity");
   humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
-  let rainElement = document.querySelector("#rain");
+  let rainElement = document.querySelector("#pressure");
   rainElement.innerHTML = `${response.data.temperature.pressure}hpa`;
   let windElement = document.querySelector("#windspeed");
   windElement.innerHTML = `${response.data.wind.speed}km/h`;

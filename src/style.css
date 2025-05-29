@@ -82,6 +82,7 @@ body {
   font-size: 25px;
 }
 #description {
+  font: 15px;
 }
 .weather-conditions {
   display: flex;

@@ -50,21 +50,15 @@ function handleSearchSubmit(event) {
   event.preventDefault();
   let searchInput = document.getElementById("search-form-input");
   searchCity(searchInput.value);
-  searchInput.value = "";
 }
-
-let searchForm = document.querySelector("#search-form");
-searchForm.addEventListener("submit", handleSearchSubmit);
-
-searchCity("East London");
 
 function getForecast(city) {
-  let apiKey = "34dcb3cfedt4654990206a21091oab73";
-  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
-  console.log(apiUrl);
+  let key = "34dcb3cfedt4654990206a21091oab73";
+  let url = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${key}&units=metric`;
+  axios.get(url).then(displayForecast);
 }
-getForecast(city);
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data);
   let days = [
     "Saturday",
     "Sunday",
@@ -89,4 +83,9 @@ function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
   forecastElement.innerHTML = forecastHtml;
 }
+
+let searchForm = document.querySelector("#search-form");
+searchForm.addEventListener("submit", handleSearchSubmit);
+searchCity("East London");
+getForecast("East London");
 displayForecast();

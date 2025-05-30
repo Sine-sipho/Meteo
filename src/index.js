@@ -58,6 +58,12 @@ searchForm.addEventListener("submit", handleSearchSubmit);
 
 searchCity("East London");
 
+function getForecast(city) {
+  let apiKey = "34dcb3cfedt4654990206a21091oab73";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  console.log(apiUrl);
+}
+getForecast(city);
 function displayForecast() {
   let days = [
     "Saturday",

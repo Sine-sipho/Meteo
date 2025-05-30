@@ -14,6 +14,8 @@ function refreshWeather(response) {
   let timeElement = document.querySelector("#time");
   let date = new Date(response.data.time * 1000);
   timeElement.innerHTML = getDate(date);
+
+  getForecast(response.data.city);
 }
 function addZero(number) {
   if (number < 10) {
@@ -52,34 +54,41 @@ function handleSearchSubmit(event) {
   searchCity(searchInput.value);
 }
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = ["Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat"];
+
+  return days[date.getDay()];
+}
+
 function getForecast(city) {
   let key = "34dcb3cfedt4654990206a21091oab73";
   let url = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${key}&units=metric`;
   axios.get(url).then(displayForecast);
 }
 function displayForecast(response) {
-  console.log(response.data);
-  let days = [
-    "Saturday",
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-  ];
   let forecastHtml = "";
-  days.forEach((day) => {
-    forecastHtml =
-      forecastHtml +
-      `<div class="weather-forecast-day">
-          <div class="weather-forecast-date">${day}</div>
-          <div class="weather-forecast-icon">☘️</div>
+  response.data.daily.forEach((day, index) => {
+    if (index < 5) {
+      forecastHtml =
+        forecastHtml +
+        `<div class="weather-forecast-day">
+          <div class="weather-forecast-date">${formatDay(day.time)}</div>
+          <div class="weather-forecast-icon">
+          <img src="${day.condition.icon_url}" />
+          </div>
           <div class="weather-forecast-temperatures">
-            <div class="weather-forecast-temperature">15°</div>
-            <div class="weather-forecast-temperature">9°</div>
+            <div class="weather-forecast-temperature">${Math.round(
+              day.temperature.maximum
+            )}°</div>
+            <div class="weather-forecast-temperature">${Math.round(
+              day.temperature.minimum
+            )}°</div>
           </div>
         </div>`;
+    }
   });
+
   let forecastElement = document.querySelector("#forecast");
   forecastElement.innerHTML = forecastHtml;
 }
@@ -87,5 +96,3 @@ function displayForecast(response) {
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSearchSubmit);
 searchCity("East London");
-getForecast("East London");
-displayForecast();

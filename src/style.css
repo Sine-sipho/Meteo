@@ -12,7 +12,6 @@ body {
   max-width: 700px;
   margin: 60px auto;
   padding: 35px;
-  box-shadow: 0, 30px, 59px rgba(65, 50, 100, 0.08);
   border-radius: 10px;
 }
 .search-container {
@@ -31,7 +30,6 @@ body {
   font-size: 14px;
   box-sizing: border-box;
   letter-spacing: 0.08em;
-  box-shadow: 0, 30px, 59px rgba(65, 50, 100, 0.8);
   border-radius: 10px;
   margin-right: 5px;
   outline: none;
@@ -98,9 +96,19 @@ body {
   display: flex;
   justify-content: space-around;
   margin-top: 30px;
+  box-shadow: 0px 0px 30px rgba(255, 255, 255);
+  padding: 10px 0px;
+  border-radius: 10px;
+  border: none;
 }
 .weather-forecast-day {
   text-align: center;
+}
+.weather-forecast-day:hover {
+  transform: scale(1.2);
+  box-shadow: 0px 0px 30px rgba(255, 255, 255);
+  border-radius: 10px;
+  cursor: pointer;
 }
 .weather-forecast-date {
   color: #276299;
@@ -129,4 +137,38 @@ footer {
 footer a {
   text-decoration: none;
   color: #276299;
+}
+@media screen and (max-width: 635px) {
+  body {
+    background-color: #c4e1ff;
+    overflow: hidden;
+  }
+  .weather-interface {
+    width: 100%;
+    height: 100vh;
+    margin: 0px;
+    overflow-x: hidden;
+  }
+  .city {
+    width: 100%;
+  }
+  .weather-conditions {
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  .condition {
+    margin: 10px 0px;
+  }
+  .weather-forecast {
+    width: 100%;
+    flex-wrap: wrap;
+    box-shadow: none;
+  }
+  .weather-forecast-day {
+    background: #c4e1ff;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255);
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+  }
 }

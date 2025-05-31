@@ -165,7 +165,7 @@ footer a {
     box-shadow: none;
   }
   .weather-forecast-day {
-    background: #c4e1ff;
+    background: rgba(255, 255, 255, 0.4);
     box-shadow: 0px 0px 10px rgba(255, 255, 255);
     margin: 10px;
     padding: 10px;

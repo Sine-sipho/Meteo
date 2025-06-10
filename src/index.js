@@ -28,6 +28,7 @@ function getDate(date) {
   let hour = addZero(date.getHours());
   let minutes = addZero(date.getMinutes());
   let weekdays = [
+    "Sunday",
     "Monday",
     "Tuesday",
     "Wednesday",
@@ -35,7 +36,6 @@ function getDate(date) {
     "Thursday",
     "Friday",
     "Saturday",
-    "Sunday",
   ];
   let day = weekdays[date.getDay()];
   return `${day} ${hour}:${minutes}`;
